@@ -6,7 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "nette/robot-loader": "^2.3",
+        "tracy/tracy": "^2.3",
+        "twbs/bootstrap": "^3.3",
+		"laravelcollective/html": "5.2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
