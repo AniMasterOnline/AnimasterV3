@@ -1,2 +1,3 @@
-@ECHO OFF
-cmd.exe /K "cd C:\Users\Daark\Documents\GitHub\AnimasterV3"
+@ECHO off
+echo AnimasterV3 Easy cmd run!
+cmd.exe /K "cd %USERPROFILE%\Documents\GitHub\AnimasterV3"

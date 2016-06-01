@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        AniMasterOnline\Providers\AppServiceProvider::class,
+        AniMasterOnline\Providers\AuthServiceProvider::class,
+        AniMasterOnline\Providers\EventServiceProvider::class,
+        AniMasterOnline\Providers\RouteServiceProvider::class,
 		
 		/*
          * Added by Neo

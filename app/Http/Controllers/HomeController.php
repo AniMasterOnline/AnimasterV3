@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace AniMasterOnline\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use AniMasterOnline\Http\Requests;
 
 class HomeController extends Controller
 {

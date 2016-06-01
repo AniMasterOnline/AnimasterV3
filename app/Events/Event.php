@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace AniMasterOnline\Events;
 
 abstract class Event
 {

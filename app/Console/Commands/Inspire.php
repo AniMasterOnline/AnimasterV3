@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace AniMasterOnline\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
