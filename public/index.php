@@ -36,6 +36,22 @@ require __DIR__.'/../bootstrap/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 
+use Tracy\Debugger;
+//Debugger::PRODUCTION or Debugger::DEVELOPMENT or Debugger::DETECT
+Debugger::$showLocation = TRUE; // Shows all additional location information
+Debugger::enable(Debugger::DETECT, __DIR__ . '/mylog');
+
+$arr = array(10, 20.2, TRUE, NULL, 'hello');
+Tracy\Debugger::barDump($arr); // Var dump in the TracyBar
+
+try {
+    //criticalOperation(); This makes a forced error!! 
+} catch (Exception $e) {
+    Debugger::log($e);
+}
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -58,24 +74,5 @@ $response->send();
 
 $kernel->terminate($request, $response);
 
-
-/*
-|--------------------------------------------------------------------------
-| Debugger Tracy
-|--------------------------------------------------------------------------
-|
-*/
-use Tracy\Debugger;
-//Debugger::PRODUCTION or Debugger::DEVELOPMENT or Debugger::DETECT
-Debugger::$showLocation = TRUE; // Shows all additional location information
-Debugger::enable(Debugger::DETECT, __DIR__ . '/mylog');
-
-$arr = array(10, 20.2, TRUE, NULL, 'hello');
-Tracy\Debugger::barDump($arr); // Var dump in the TracyBar
-
-try {
-    //criticalOperation(); //This makes a forced error!! 
-} catch (Exception $e) {
-    Debugger::log($e);
-}
 ?>
+

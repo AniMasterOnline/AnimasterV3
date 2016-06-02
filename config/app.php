@@ -159,8 +159,8 @@ return [
 		/*
          * Added by Neo
          */
-		Collective\Html\HtmlServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class,
+        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
     ],
 
     /*

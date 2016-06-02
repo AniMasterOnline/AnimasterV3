@@ -11,7 +11,8 @@
         "tracy/tracy": "^2.3",
         "twbs/bootstrap": "^3.3",
 		"laravelcollective/html": "5.2.*",
-        "frozennode/administrator": " 5.*"
+        "frozennode/administrator": " 5.*",
+        "laravelrus/sleepingowl": "4.*@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

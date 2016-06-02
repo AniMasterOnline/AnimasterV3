@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-	return view('home');
+    return view('welcome');
 });
-Route::get('home', function () {
-    return view('home');
-});
+Route::auth();
+Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+Route::post('password/reset', 'Auth\PasswordController@reset');
+
+Route::get('/home', 'HomeController@index');
