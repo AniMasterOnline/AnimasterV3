@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Animaster Online v3</title>
+    <title>@yield('title') | Animaster Online v3</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -93,11 +93,14 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="#"><i class="tm-icon zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dm-icon pull-right">
-                        <li><a href="{{ url('/admin') }}"><i class="zmdi zmdi-lock-open"></i>Admin Panel</a></li>
-                        <li><a href="{{ url('/settings') }}"><i class="zmdi zmdi-settings"></i> Configuración</a></li>
-                        <li><a href="{{ url('/logout') }}"><i class="zmdi zmdi-time-restore"></i> Logout</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Actions</li>
+                        @if (Auth::guest())
+                        @else
+                            <li><a href="{{ url('/admin') }}"><i class="zmdi zmdi-lock-open"></i>Admin Panel</a></li>
+                            <li><a href="{{ url('/settings') }}"><i class="zmdi zmdi-settings"></i> Configuración</a></li>
+                            <li><a href="{{ url('/logout') }}"><i class="zmdi zmdi-time-restore"></i> Logout</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Actions</li>
+                        @endif
                         <li class="hidden-xs"><a data-action="fullscreen" href="#" ><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a></li>
                     </ul>
                 </li>
