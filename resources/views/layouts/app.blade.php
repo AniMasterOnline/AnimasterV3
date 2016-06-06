@@ -93,15 +93,16 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="#"><i class="tm-icon zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dm-icon pull-right">
-                        @if (Auth::guest())
-                        @else
-                            <li><a href="{{ url('/admin') }}"><i class="zmdi zmdi-lock-open"></i>Admin Panel</a></li>
-                            <li><a href="{{ url('/settings') }}"><i class="zmdi zmdi-settings"></i> Configuración</a></li>
-                            <li><a href="{{ url('/logout') }}"><i class="zmdi zmdi-time-restore"></i> Logout</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Actions</li>
+                        <li class="hidden-xs"><a data-action="fullscreen" href="#" ><i class="zmdi zmdi-fullscreen"></i>Toggle Fullscreen</a></li>
+                        @if (!Auth::guest())
+                            @if (Auth::user()->isAdmin())
+                                <li><a href="{{ url('/admin') }}"><i class="zmdi zmdi-lock-open"></i>Admin Panel</a></li>
+                            @endif
+                            <li><a href="{{ url('/settings') }}"><i class="zmdi zmdi-settings"></i>Configuración</a></li>
+                            <li><a href="{{ url('/logout') }}"><i class="zmdi zmdi-time-restore"></i>Salir</a></li>
+                            
                         @endif
-                        <li class="hidden-xs"><a data-action="fullscreen" href="#" ><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a></li>
+                        
                     </ul>
                 </li>
             </ul>
@@ -113,7 +114,7 @@
     <!-- Top Menu Content -->
     <nav class="ha-menu">
         <ul>
-            <li class="waves-effect"><a href="{{ url('/home') }}" class="btn">Inicio</a></li>
+            <li class="waves-effect"><a href="{{ url('/') }}" class="btn">Inicio</a></li>
             <li class="waves-effect"><a href="{{ url('/home') }}">Partidas de Rol</a></li>
             <li class="waves-effect"><a href="{{ url('/home') }}">Zona Roleo</a></li>
             <li class="waves-effect"><a href="{{ url('/home') }}">Mi Mesa</a></li>
