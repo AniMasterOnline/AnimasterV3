@@ -57,39 +57,68 @@
                 <li id="top-search">
                     <a href="#"><i class="tm-icon zmdi zmdi-search"></i></a>
                 </li>
-                <li class="dropdown">
-                    <a data-toggle="dropdown" href="#">
-                        <i class="tm-icon zmdi zmdi-accounts-add"></i>
-                        <i class="tmn-counts">1</i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg pull-right">
-                        <div class="listview">
-                            <div class="lv-header">
-                                Notifications
-                                <ul class="actions">
-                                    <li class="dropdown">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-close"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lv-body">
-                                <a class="lv-item" href="#">
-                                    <div class="media">
-                                        <div class="pull-left">
-                                            {{ HTML::image('images/game/1.jpg', "Imagen no encontrada", array('class' => 'lv-img-sm', 'title' => '')) }}
+                @if (!Auth::guest())
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#" aria-expanded="false">
+                            <i class="tm-icon zmdi zmdi-email"></i>
+                            <i class="tmn-counts">1</i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg pull-right">
+                            <div class="listview">
+                                <div class="lv-header">
+                                    Mensajes
+                                </div>
+                                <div class="lv-body">
+                                    <a class="lv-item" href="#">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                {{ HTML::image('images/game/1.jpg', "Imagen no encontrada", array('class' => 'lv-img-sm', 'title' => '')) }}
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">Bill Phillips</div>
+                                                <small class="lv-small">Proin laoreet commodo eros id faucibus. Donec ligula quam, imperdiet vel ante placerat</small>
+                                            </div>
                                         </div>
-                                        <div class="media-body">
-                                            <div class="lv-title">test</div>
-                                            <small class="lv-small">description test</small>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
+                                <a class="lv-footer" href="#">Mostrar Todos</a>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" href="#">
+                            <i class="tm-icon zmdi zmdi-accounts-add"></i>
+                            <i class="tmn-counts">1</i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg pull-right">
+                            <div class="listview">
+                                <div class="lv-header">
+                                    Notificaciónes
+                                    <ul class="actions">
+                                        <li class="dropdown">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-close"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="lv-body">
+                                    <a class="lv-item" href="#">
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                {{ HTML::image('images/game/1.jpg', "Imagen no encontrada", array('class' => 'lv-img-sm', 'title' => '')) }}
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lv-title">test</div>
+                                                <small class="lv-small">description test</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                @endif
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="#"><i class="tm-icon zmdi zmdi-more-vert"></i></a>
                     <ul class="dropdown-menu dm-icon pull-right">
@@ -102,7 +131,6 @@
                             <li><a href="{{ url('/logout') }}"><i class="zmdi zmdi-time-restore"></i>Salir</a></li>
                             
                         @endif
-                        
                     </ul>
                 </li>
             </ul>
